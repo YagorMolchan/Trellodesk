@@ -1,0 +1,19 @@
+﻿@model IEnumerable<TrelloDesk.Models.Entities.Course>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Список курсов</h2>
+<div class="container">
+    <div class="row">
+        @foreach(var item in Model)
+        {
+            @Html.Partial("_CoursePartial",item)
+        }
+    </div>
+</div>
+
+
+

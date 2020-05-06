@@ -1,0 +1,10 @@
+﻿@model TrelloDesk.Models.Entities.Course
+
+<div class="col-lg-4">
+    <h2>@Model.Name</h2>
+    <h5>@Model.Description</h5>
+    <p>@Html.ActionLink("Добавить курсанта","AddPersonToCourse",new { courseId=Model.Id})</p>
+    <p>@Html.ActionLink("Список курсантов","GetPersonList",new {courseId=Model.Id })</p>
+    @*<p>@Html.ActionLink("Оформить подписку","SubscribeToCourse","Course",new { id=Model.Id},null)</p>*@
+</div>
+

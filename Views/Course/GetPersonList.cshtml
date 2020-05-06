@@ -1,0 +1,27 @@
+﻿@model TrelloDesk.Models.ViewModels.PersonListViewModel
+
+@{
+    ViewBag.Title = "GetPersonList";
+}
+
+<h2>Список курсантов</h2>
+<table>
+    <tr>
+        <th>Учащийся</th>
+    </tr>
+    @foreach (var item in Model.People)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>
+                @using (Html.BeginForm("RemovePersonFromCourse", "Course"))
+                {
+                    @Html.Hidden("CourseId", Model.CourseId)
+                    @Html.Hidden("PersonId", item.Id)
+                    <input type="submit" value="Удалить" />
+                }
+            </td>
+        </tr>
+    }   
+</table>
+

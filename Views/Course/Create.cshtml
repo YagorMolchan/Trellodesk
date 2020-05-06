@@ -1,0 +1,22 @@
+﻿@model TrelloDesk.Models.ViewModels.CourseViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Добавление нового курса</h2>
+@using (Html.BeginForm("Create", "Course"))
+{
+    <div>
+        @Html.LabelFor(m => m.Name)<br />
+        @Html.EditorFor(m => m.Name)
+    </div>
+    <diV>
+        @Html.LabelFor(m => m.Description)<br/>
+        @Html.TextAreaFor(m=>m.Description)
+    </diV>
+    <p>
+        <input type="submit" value="Добавить"/>
+    </p>
+}
+

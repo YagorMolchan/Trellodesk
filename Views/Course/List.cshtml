@@ -1,0 +1,14 @@
+﻿@model IEnumerable<TrelloDesk.Models.Entities.Course>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Все подписки</h2>
+@foreach (var item in Model)
+{
+    <h2>@item.Name</h2>
+    <h5>@item.Description</h5>
+    <p>@Html.ActionLink("Отказаться от подписки", "UnsubscribeFromCourse", "Course", new { id = item.Id }, null)</p>
+}
+

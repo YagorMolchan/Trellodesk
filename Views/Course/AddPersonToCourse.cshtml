@@ -1,0 +1,23 @@
+﻿@model TrelloDesk.Models.ViewModels.PersonViewModel
+
+@{
+    ViewBag.Title = "AddPersonToCourse";
+}
+
+<h2>Добавить участника</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div>
+        @Html.LabelFor(m => m.Firstname,"Имя")<br/>
+        @Html.EditorFor(m => m.Firstname) @Html.ValidationMessageFor(m => m.Firstname)        
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Secondname,"Фамилия")<br/>
+        @Html.EditorFor(m => m.Secondname) @Html.ValidationMessageFor(m => m.Secondname)
+    </div>
+    <div>
+        <input type="submit" value="Добавить"/>
+    </div>
+}
+
